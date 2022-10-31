@@ -29,7 +29,8 @@ public class Main {
                 .toList();
 
         List<Person> productive = perons.stream()
-                .filter(s -> s.getAge() > 17 && s.getAge() < 66 && s.getSex() == Sex.MAN || s.getAge() > 17 && s.getAge() < 61 && s.getSex() == Sex.WOMAN)
+                .filter(s -> s.getAge() > 17 && s.getAge() < 66 && s.getSex() == Sex.MAN && s.getEducation() == Education.HIGHER
+                        || s.getAge() > 17 && s.getAge() < 61 && s.getSex() == Sex.WOMAN && s.getEducation() == Education.HIGHER)
                 .sorted(Comparator.comparing(Person::getFamily))
                 .toList();
     }
